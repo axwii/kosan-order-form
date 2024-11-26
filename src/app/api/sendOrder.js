@@ -1,48 +1,57 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { name, email, product, quantity, recaptchaToken } = req.body;
+  if (req.method === "POST") {
+    const {
+      companyName,
+      email,
+      customerNumber,
+      referenceNumber,
+      phoneNumber,
+      address,
+      postalCode,
+      city,
+      terms,
+      ...products
+    } = req.body;
 
-    // Verify reCAPTCHA
-    const recaptchaResponse = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-    });
-    const recaptchaResult = await recaptchaResponse.json();
-
-    if (!recaptchaResult.success) {
-      return res.status(400).json({ message: "reCAPTCHA failed, please try again." });
-    }
-
-    // Configure Nodemailer
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    // Email message
-    const mailOptions = {
-      from: process.env.SMTP_USER,
-      to: "internal-recipient@example.com", // Replace with your internal email
-      subject: `New Order from ${name}`,
-      text: `Order Details:\n\nName: ${name}\nEmail: ${email}\nProduct: ${product}\nQuantity: ${quantity}`,
-    };
-
-    // Send email
     try {
+      const transporter = nodemailer.createTransport({
+        service: "gmail", // Or your preferred email service
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      const productDetails = Object.entries(products)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join("\n");
+
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: "internal@company.com",
+        subject: "New Gas Order",
+        text: `
+          Firma Navn: ${companyName}
+          Email: ${email}
+          Kundenummer: ${customerNumber}
+          Referance nummer: ${referenceNumber}
+          Telefon nummer: ${phoneNumber}
+          Adresse: ${address}
+          Postnummer: ${postalCode}
+          By: ${city}
+          
+          Produkter:
+          ${productDetails}
+        `,
+      };
+
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: "Order sent successfully!" });
     } catch (error) {
-      console.error("Error sending email:", error);
-      res.status(500).json({ message: "Failed to send order. Please try again." });
+      console.error(error);
+      res.status(500).json({ message: "Error sending email" });
     }
   } else {
     res.status(405).json({ message: "Method not allowed" });
