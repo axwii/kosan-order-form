@@ -9,7 +9,7 @@ export default function Home() {
       <sub>Velkommen til gasbestilling</sub>
       <p>Her kan du bestille gas til... </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-16 items-center justify-items-center">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-16 items-center justify-items-center">
         <div className="">
           <Image
             src={"/static/images/kosangas-5kg-light.jpg"}
@@ -72,7 +72,7 @@ export default function Home() {
             className="border border-gray-300 rounded w-20 py-1 px-2"
           />
         </div>
-      </div>
+      </div> */}
 
       <CustomerForm />
     </main>
