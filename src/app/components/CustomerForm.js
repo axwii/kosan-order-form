@@ -42,7 +42,7 @@ const CustomerForm = () => {
         <ProductCard
           name="10 kg Kosan Gas Light"
           alt="10 kg Kosan Gas Light"
-          varenr="01060"
+          varenr="01109"
           imgSrc="/static/images/kosangas-10kg-light.jpg"
           inputName="Kosan Gas 10kg"
         />
@@ -85,7 +85,6 @@ const CustomerForm = () => {
           <input
             type="number"
             name="customerNumber"
-            required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -96,7 +95,6 @@ const CustomerForm = () => {
           <input
             type="number"
             name="referenceNumber"
-            required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -158,9 +156,9 @@ const CustomerForm = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="w-full bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Submit
+          Bestil Gas
         </button>
       </div>
     </form>
