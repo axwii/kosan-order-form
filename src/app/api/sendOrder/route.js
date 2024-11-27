@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: "internal@company.com",
+        to: "axel@wiingaard.net",
         subject: "New Gas Order",
         text: `
           Firma Navn: ${companyName}
