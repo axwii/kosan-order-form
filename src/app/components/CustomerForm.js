@@ -1,5 +1,5 @@
 "use client";
-
+import ProductCard from "./ProductCard";
 import React from "react";
 
 const CustomerForm = () => {
@@ -34,18 +34,43 @@ const CustomerForm = () => {
       onSubmit={handleSubmit}
       className="max-w-lg mx-auto p-4 bg-white border border-gray-300 rounded"
     >
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          Firmanavn
-        </label>
-        <input
-          type="text"
-          name="companyName"
-          required
-          className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <ProductCard
+          name="5 kg Kosan Gas Light"
+          alt="5 kg Kosan Gas Light"
+          varenr="01059"
+          imgSrc="/static/images/kosangas-5kg-light.jpg"
+          inputName="kosangas5kg"
+        />
+        <ProductCard
+          name="10 kg Kosan Gas Light"
+          alt="10 kg Kosan Gas Light"
+          varenr="01060"
+          imgSrc="/static/images/kosangas-10kg-light.jpg"
+          inputName="kosangas10kg"
+        />
+        <ProductCard
+          name="5 kg Kosan Gas Click on"
+          alt="5 kg Kosan Gas Click on"
+          varenr="01061"
+          imgSrc="/static/images/kosangas-5kg-click-on.webp"
+          inputName="kosangas5kgClickOn"
         />
       </div>
-      <div className="mb-4">
+
+      <div className="mt-4">
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2">
+            Firmanavn
+          </label>
+          <input
+            type="text"
+            name="companyName"
+            required
+            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Email
         </label>
@@ -55,8 +80,8 @@ const CustomerForm = () => {
           required
           className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         />
-      </div>
-      <div className="mb-4">
+        </div>
+        <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Kundenummer
         </label>
@@ -120,6 +145,7 @@ const CustomerForm = () => {
           required
           className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
         />
+      </div>
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">
