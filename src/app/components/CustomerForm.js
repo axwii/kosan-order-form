@@ -37,21 +37,56 @@ const CustomerForm = () => {
           alt="5 kg Kosan Gas Light"
           varenr="01059"
           imgSrc="/static/images/kosangas-5kg-light.jpg"
-          inputName="Kosan Gas 5kg"
+          inputName="Kosan Gas 5kg Light"
         />
         <ProductCard
           name="10 kg Kosan Gas Light"
           alt="10 kg Kosan Gas Light"
           varenr="01109"
           imgSrc="/static/images/kosangas-10kg-light.jpg"
-          inputName="Kosan Gas 10kg"
+          inputName="Kosan Gas 10kg Light"
         />
         <ProductCard
-          name="5 kg Kosan Gas Click on"
-          alt="5 kg Kosan Gas Click on"
-          varenr="01061"
+          name="5 kg Kosan Gas"
+          alt="5 kg Kosan Gas"
+          varenr="01050"
           imgSrc="/static/images/kosangas-5kg-click-on.webp"
-          inputName="Kosan Gas 5kg Click On"
+          inputName="Kosan Gas 5kg"
+        />
+        <ProductCard
+          name="11 kg Kosan Gas"
+          alt="11 kg Kosan Gas"
+          varenr="01112"
+          imgSrc="/static/images/kosangas-11kg-click-on.jpg"
+          inputName="Kosan Gas 11kg"
+        />
+        <ProductCard
+          name="22 kg Kosan Gas"
+          alt="22 kg Kosan Gas"
+          varenr="01220"
+          imgSrc="/static/images/kosangas-22kg.jpg"
+          inputName="Kosan Gas 22kg"
+        />
+        <ProductCard
+          name="33 kg Kosan Gas"
+          alt="33 kg Kosan Gas"
+          varenr="01330"
+          imgSrc="/static/images/kosangas-33kg.webp"
+          inputName="Kosan Gas 33kg"
+        />
+        <ProductCard
+          name="6 kg Kosan Gas Alu"
+          alt="6 kg Kosan Gas Alu"
+          varenr="01060"
+          imgSrc="/static/images/kosangas-6kg-alu.jpg"
+          inputName="6 kg Kosan Gas Alu"
+        />
+        <ProductCard
+          name="11 kg Kosan Gas Alu Truck"
+          alt="11 kg Kosan Gas Alu Truck"
+          varenr="01110"
+          imgSrc="/static/images/kosangas-11kg-alu-truck.webp"
+          inputName="11 kg Kosan Gas Alu Truck"
         />
       </div>
 

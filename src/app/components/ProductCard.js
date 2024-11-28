@@ -5,14 +5,16 @@ import Image from "next/image";
 
 const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
   return (
-    <div >
-      <Image
-        src={imgSrc}
-        alt={alt}
-        width={300}
-        height={300}
-        className="border border-gray-300 rounded-lg object-cover"
-      />
+    <div>
+      <figure style={{ position: "relative", width: "300px", height: "300px" }}>
+        <Image
+          src={imgSrc}
+          alt={alt}
+          layout="fill"
+          objectFit="cover"
+          className="border border-gray-300 rounded-lg"
+        />
+      </figure>
       <div>
         <h1 className="font-bold">{name}</h1>
         <p>Varenr. {varenr}</p>
