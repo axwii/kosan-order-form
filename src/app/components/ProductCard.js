@@ -1,9 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
+  const [quantity, setQuantity] = useState(0);
+
+  const handleDecrement = () => {
+    setQuantity((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleIncrement = () => {
+    setQuantity((prev) => Math.min(prev + 1, 100));
+  };
+
   return (
     <div>
       <figure style={{ position: "relative", width: "300px", height: "300px" }}>
@@ -18,13 +28,17 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
       <div>
         <h1 className="font-bold">{name}</h1>
         <p>Varenr. {varenr}</p>
-        <input
-          type="number"
-          name={inputName}
-          placeholder="Antal"
-          min="0"
-          className="border border-gray-300 rounded w-20 py-1 px-2"
-        />
+        <div className="flex">
+          <span className="input-number-decrement" onClick={handleDecrement}>–</span>
+          <input
+            className="input-number"
+            type="text"
+            name={inputName}
+            value={quantity}
+            readOnly
+          />
+          <span className="input-number-increment" onClick={handleIncrement}>+</span>
+        </div>
       </div>
     </div>
   );
