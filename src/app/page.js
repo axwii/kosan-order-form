@@ -5,7 +5,7 @@ import CustomerForm from "./components/CustomerForm";
 export default function Home() {
   return (
     <main role="main">
-      <header className="text-center mt-4">
+      <header className="text-center my-4">
         <h1 className="text-4xl font-bold">
           Kosan Gasbestilling
         </h1>
