@@ -39,21 +39,21 @@ const Footer = () => {
       </div>
       <div className="flex justify-center space-x-4 pb-10">
         <a
-          href="https://www.linkedin.com"
+          href="https://www.linkedin.com/company/kosan-gascenter-k%C3%B8benhavn/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin className="text-blue-700 text-2xl" />
         </a>
         <a
-          href="https://www.facebook.com"
+          href="https://www.facebook.com/KosanGascenterKbh"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaFacebook className="text-blue-600 text-2xl" />
         </a>
         <a
-          href="https://www.instagram.com"
+          href="https://www.instagram.com/kosangascenterkbh/"
           target="_blank"
           rel="noopener noreferrer"
         >
