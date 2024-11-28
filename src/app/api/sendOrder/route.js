@@ -39,10 +39,10 @@ export async function POST(req) {
       to: "axel@wiingaard.net",
       subject: "New Gas Order",
       text: `
-        Firma Navn: ${companyName}
+        Firmanavn: ${companyName}
         Email: ${email}
         Kundenummer: ${customerNumber}
-        Referance nummer: ${referenceNumber}
+        Reference nummer: ${referenceNumber}
         Telefon nummer: ${phoneNumber}
         Adresse: ${address}
         Postnummer: ${postalCode}
