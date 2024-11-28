@@ -12,6 +12,7 @@ module.exports = {
         foreground: "var(--foreground)",
         'custom-green': '#5B7813',
         'custom-green-hover': '#4A6210',
+        'kosan-orange': 'rgb(250, 166, 22)',
       },
     },
   },
