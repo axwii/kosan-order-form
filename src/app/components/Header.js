@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <header className="bg-white p-4">
+    <header role="banner" className="bg-white p-4">
       <div className="flex justify-center items-center">
         <Image
           src={"/static/images/KosanGascenterLogo.png"}

@@ -4,7 +4,7 @@ import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100  mt-10 text-center">
+    <footer role="contentinfo" className="bg-gray-100  mt-10 text-center">
       <figure className="flex justify-center my-2 p-2 bg-kosan-orange">
         <Image
           src={"/static/images/KosanGascenterLogoAlt.png"}
