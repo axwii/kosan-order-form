@@ -110,6 +110,7 @@ const CustomerForm = () => {
             type="email"
             name="email"
             required
+            autoComplete="email"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -118,8 +119,9 @@ const CustomerForm = () => {
             Kundenummer
           </label>
           <input
-            type="number"
+            type="text"
             name="customerNumber"
+            inputMode="numeric"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -128,8 +130,9 @@ const CustomerForm = () => {
             Reference nummer
           </label>
           <input
-            type="number"
+            type="text"
             name="referenceNumber"
+            inputMode="numeric"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -142,6 +145,7 @@ const CustomerForm = () => {
             name="phoneNumber"
             pattern="[0-9]+"
             required
+            autoComplete="tel"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -161,8 +165,9 @@ const CustomerForm = () => {
             Postnummer
           </label>
           <input
-            type="number"
+            type="text"
             name="postalCode"
+            inputMode="numeric"
             required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
