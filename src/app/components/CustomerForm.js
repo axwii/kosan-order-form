@@ -106,22 +106,30 @@ const CustomerForm = () => {
 
       <div className="max-w-lg mx-auto p-4 bg-white border border-gray-300 rounded">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="companyName"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Firmanavn
           </label>
           <input
             type="text"
+            id="companyName"
             name="companyName"
             required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="email"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Email
           </label>
           <input
             type="email"
+            id="email"
             name="email"
             required
             autoComplete="email"
@@ -129,33 +137,45 @@ const CustomerForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="customerNumber"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Kundenummer
           </label>
           <input
             type="text"
+            id="customerNumber"
             name="customerNumber"
             inputMode="numeric"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="referenceNumber"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Reference nummer
           </label>
           <input
             type="text"
+            id="referenceNumber"
             name="referenceNumber"
             inputMode="numeric"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="phoneNumber"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Telefon nummer
           </label>
           <input
             type="tel"
+            id="phoneNumber"
             name="phoneNumber"
             pattern="[0-9]+"
             required
@@ -164,22 +184,30 @@ const CustomerForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="address"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Adresse
           </label>
           <input
             type="text"
+            id="address"
             name="address"
             required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="postalCode"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             Postnummer
           </label>
           <input
             type="text"
+            id="postalCode"
             name="postalCode"
             inputMode="numeric"
             required
@@ -187,20 +215,28 @@ const CustomerForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="city"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             By
           </label>
           <input
             type="text"
+            id="city"
             name="city"
             required
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label
+            htmlFor="terms"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
             <input
               type="checkbox"
+              id="terms"
               name="terms"
               required
               className="mr-2 leading-tight"

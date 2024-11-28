@@ -5,9 +5,10 @@ import CustomerForm from "./components/CustomerForm";
 export default function Home() {
   return (
     <main className="">
-      <title className="">Kosan Gasbestilling</title>
-      <sub>Velkommen til gasbestilling</sub>
-      <p>Her kan du bestille gas til... </p>
+<h1 className="text-4xl font-bold text-center mt-4">Kosan Gasbestilling</h1>
+<p className="text-lg text-gray-700 text-center mt-2">Velkommen til Kosan Gascenter København og Nordsjælland's gasbestilling</p>
+      
+      {/* <p>Her kan du bestille gas til... </p> */}
 
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-16 items-center justify-items-center">
         <div className="">
