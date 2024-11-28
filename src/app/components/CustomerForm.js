@@ -47,6 +47,13 @@ const CustomerForm = () => {
           inputName="Kosan Gas 10kg Light"
         />
         <ProductCard
+          name="2 kg Kosan Gas"
+          alt="2 kg Kosan Gas"
+          varenr="01021"
+          imgSrc="/static/images/kosangas-2kg.webp"
+          inputName="Kosan Gas 2kg"
+        />
+        <ProductCard
           name="5 kg Kosan Gas"
           alt="5 kg Kosan Gas"
           varenr="01050"
@@ -56,7 +63,7 @@ const CustomerForm = () => {
         <ProductCard
           name="11 kg Kosan Gas"
           alt="11 kg Kosan Gas"
-          varenr="01112"
+          varenr="01110"
           imgSrc="/static/images/kosangas-11kg-click-on.jpg"
           inputName="Kosan Gas 11kg"
         />
@@ -84,9 +91,16 @@ const CustomerForm = () => {
         <ProductCard
           name="11 kg Kosan Gas Alu Truck"
           alt="11 kg Kosan Gas Alu Truck"
-          varenr="01110"
+          varenr="01112"
           imgSrc="/static/images/kosangas-11kg-alu-truck.webp"
           inputName="11 kg Kosan Gas Alu Truck"
+        />
+        <ProductCard
+          name="3 kg CGI"
+          alt="3 kg CGI"
+          varenr="01033"
+          imgSrc="/static/images/kosangas-3kg-CGI.jpg"
+          inputName="3 kg CGI"
         />
       </div>
 
