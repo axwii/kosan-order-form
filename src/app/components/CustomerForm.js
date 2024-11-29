@@ -32,7 +32,7 @@ const CustomerForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 max-w-5xl mx-auto">
         <ProductCard
           name="5 kg Kosan Gas Light"
           alt="5 kg Kosan Gas Light"
@@ -104,8 +104,8 @@ const CustomerForm = () => {
           inputName="3 kg CGI"
         />
       </div>
-
-      <div className="max-w-lg mx-auto p-4 bg-white border border-gray-300 rounded">
+      
+      <div className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded">
         <div className="mb-4">
           <label
             htmlFor="companyName"
