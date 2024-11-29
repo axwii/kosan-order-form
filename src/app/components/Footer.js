@@ -4,7 +4,7 @@ import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer role="contentinfo" className="bg-gray-100  mt-10 text-center">
+    <footer role="contentinfo" className="bg-slate-900 text-white mt-10 text-center">
       <figure className="flex justify-center my-2 p-2 bg-kosan-orange">
         <Image
           src={"/static/images/KosanGascenterLogoAlt.png"}
@@ -43,21 +43,21 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin className="text-blue-700 text-2xl" />
+          <FaLinkedin className="hover:text-blue-700 text-2xl" />
         </a>
         <a
           href="https://www.facebook.com/KosanGascenterKbh"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaFacebook className="text-blue-600 text-2xl" />
+          <FaFacebook className="hover:text-blue-600 text-2xl" />
         </a>
         <a
           href="https://www.instagram.com/kosangascenterkbh/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaInstagram className="text-pink-500 text-2xl" />
+          <FaInstagram className="hover:text-pink-500 text-2xl" />
         </a>
       </div>
     </footer>
