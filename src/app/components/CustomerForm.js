@@ -103,8 +103,13 @@ const CustomerForm = () => {
           inputName="3 kg CGI"
         />
       </div>
+      <a href="#order-section" className="block text-center">
+        <button type="button" className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline">Udfyld bestilling</button>
+      </a>
+
       
-      <div className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded">
+      <div id="order-section" className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded">
+        <h2 className="text-2xl font-bold text-center">Dine oplysninger</h2>
         <div className="mb-4">
           <label
             htmlFor="companyName"
