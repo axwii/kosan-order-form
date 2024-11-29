@@ -43,7 +43,7 @@ export async function POST(req) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "axel@wiingaard.net",
+      to: "bestilling@kosan-albertslund.dk",
       subject: `Ny gasbestilling fra ${companyName}`,
       text: `
         Firmanavn: ${companyName}
