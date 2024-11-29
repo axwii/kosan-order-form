@@ -32,7 +32,7 @@ const CustomerForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"> */}
-      <div className="">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 max-w-5xl mx-auto">
         <ProductCard
           name="5 kg Kosan Gas Light"
           alt="5 kg Kosan Gas Light"
