@@ -55,18 +55,18 @@ const CustomerForm = () => {
           inputName="Kosan Gas 2kg"
         />
         <ProductCard
-          name="5 kg Kosan Gas"
-          alt="5 kg Kosan Gas"
+          name="5 kg Kosan Gas Click-on"
+          alt="5 kg Kosan Gas Click-on"
           varenr="01050"
           imgSrc="/static/images/kosangas-5kg-click-on.webp"
-          inputName="Kosan Gas 5kg"
+          inputName="Kosan Gas 5kg Click-on"
         />
         <ProductCard
-          name="11 kg Kosan Gas"
-          alt="11 kg Kosan Gas"
+          name="11 kg Kosan Gas Click-on"
+          alt="11 kg Kosan Gas Click-on"
           varenr="01110"
           imgSrc="/static/images/kosangas-11kg-click-on.jpg"
-          inputName="Kosan Gas 11kg"
+          inputName="Kosan Gas 11kg Click-on"
         />
         <ProductCard
           name="22 kg Kosan Gas"
