@@ -21,18 +21,25 @@ export async function POST(req) {
 
   try {
     const transporter = nodemailer.createTransport({
-        host: "send.one.com", 
-        port: 465, 
-        secure: true,
+      host: "send.one.com",
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    const productDetails = Object.entries(products)
-      .map(([key, value]) => `${key}: ${value}`)
-      .join("\n");
+    // Generate product rows for the HTML table
+    const productRows = Object.entries(products)
+      .map(
+        ([key, value]) =>
+          `<tr>
+             <td style="padding: 8px; border: 1px solid #ddd;">${key}</td>
+             <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${value}</td>
+           </tr>`
+      )
+      .join("");
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -47,16 +54,47 @@ export async function POST(req) {
         Adresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
-        
         Produkter:
-        ${productDetails}
+        ${Object.entries(products)
+          .map(([key, value]) => `${key}: ${value}`)
+          .join("\n")}
+      `,
+      html: `
+        <p>Firmanavn: <strong>${companyName}</strong></p>
+        <p>Email: <strong>${email}</strong></p>
+        <p>Kundenummer: <strong>${customerNumber}</strong></p>
+        <p>Reference nummer: <strong>${
+          referenceNumber || "Ikke angivet"
+        }</strong></p>
+        <p>Telefon nummer: <strong>${phoneNumber}</strong></p>
+        <p>Adresse: <strong>${address}</strong></p>
+        <p>Postnummer: <strong>${postalCode}</strong></p>
+        <p>By: <strong>${city}</strong></p>
+        <p><strong>Produkter:</strong></p>
+        <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+          <thead>
+            <tr>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Produkt</th>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Antal</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${productRows}
+          </tbody>
+        </table>
       `,
     };
 
     await transporter.sendMail(mailOptions);
-    return NextResponse.json({ message: "Order sent successfully!" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Order sent successfully!" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ message: "Error sending email" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Error sending email" },
+      { status: 500 }
+    );
   }
 }
