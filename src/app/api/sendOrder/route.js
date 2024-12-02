@@ -87,13 +87,13 @@ export async function POST(req) {
 
     await transporter.sendMail(mailOptions);
     return NextResponse.json(
-      { message: "Order sent successfully!" },
+      { message: "Bestillingen er sendt! Tak for din ordre." },
       { status: 200 }
     );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { message: "Error sending email" },
+      { message: "Ups! Noget gik galt. Prøv igen eller kontakt os for hjælp." },
       { status: 500 }
     );
   }
