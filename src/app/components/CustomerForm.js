@@ -104,11 +104,18 @@ const CustomerForm = () => {
         />
       </div>
       <a href="#order-section" className="block text-center">
-        <button type="button" className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline">Udfyld bestilling</button>
+        <button
+          type="button"
+          className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline"
+        >
+          Udfyld bestilling
+        </button>
       </a>
 
-      
-      <div id="order-section" className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded">
+      <div
+        id="order-section"
+        className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded"
+      >
         <h2 className="text-2xl font-bold text-center">Dine oplysninger</h2>
         <div className="mb-4">
           <label
@@ -246,7 +253,15 @@ const CustomerForm = () => {
               required
               className="mr-2 leading-tight"
             />
-            Jeg accepterer handelsbetingelser
+            Jeg accepterer{" "}
+            <a
+              href="https://u7sqa0-8k.myshopify.com/policies/terms-of-service"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              handelsbetingelser
+            </a>
           </label>
         </div>
         <button
