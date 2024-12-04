@@ -11,7 +11,21 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
   };
 
   const handleIncrement = () => {
-    setQuantity((prev) => Math.min(prev + 1, 100));
+    setQuantity((prev) => Math.min(prev + 1, 200));
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+
+    if (/^\d*$/.test(value)) {
+      const numericValue = parseInt(value, 10);
+
+      if (!isNaN(numericValue)) {
+        setQuantity(Math.min(Math.max(numericValue, 0), 200));
+      } else {
+        setQuantity(0);
+      }
+    }
   };
 
   return (
@@ -37,7 +51,7 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
             type="text"
             name={inputName}
             value={quantity}
-            readOnly
+            onChange={handleInputChange}
           />
           <span className="input-number-increment" onClick={handleIncrement}>+</span>
         </div>
