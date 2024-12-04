@@ -143,8 +143,15 @@ const CustomerForm = () => {
           onQuantityChange={handleQuantityChange}
         />
       </div>
-      <div className="text-center my-4">
-        <h2 className="text-xl font-bold">Total Weight: {totalWeight} kg</h2>
+      <div className="bg-gray-100 p-6 text-center my-8">
+        <h2 className="text-2xl font-semibold text-gray-800">
+          Totalvægt: <span className="text-blue-600">{totalWeight} kg</span>
+        </h2>
+        <p className="mt-4 text-gray-700">
+          Bemærk: Ordrer under <span className="font-bold">100 kg</span>{" "}
+          pålægges et gebyr på
+          <span className="text-red-600 font-bold"> 350 kr.</span>
+        </p>
       </div>
       <a href="#order-section" className="block text-center">
         <button
@@ -157,7 +164,7 @@ const CustomerForm = () => {
 
       <div
         id="order-section"
-        className="max-w-lg m-4 sm:mx-auto p-4 bg-white border border-gray-300 rounded"
+        className="max-w-lg m-4 mt-20 sm:mx-auto p-4 bg-white border border-gray-300 rounded"
       >
         <h2 className="text-2xl font-bold text-center">Dine oplysninger</h2>
         <div className="mb-4">
