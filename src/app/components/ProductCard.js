@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-const ProductCard = ({ name, alt, varenr, imgSrc, inputName }) => {
+const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityChange }) => {
   const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    onQuantityChange(inputName, weight, quantity);
+  }, [quantity, weight]);
 
   const handleDecrement = () => {
     setQuantity((prev) => Math.max(prev - 1, 0));

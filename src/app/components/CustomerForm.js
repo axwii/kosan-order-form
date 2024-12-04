@@ -1,8 +1,26 @@
 "use client";
 import ProductCard from "./ProductCard";
-import React from "react";
+import React, { useState } from "react";
 
 const CustomerForm = () => {
+  const [totalWeight, setTotalWeight] = useState(0);
+  const [quantities, setQuantities] = useState({});
+
+  const handleQuantityChange = (inputName, weight, quantity) => {
+    setQuantities((prevQuantities) => {
+      const newQuantities = {
+        ...prevQuantities,
+        [inputName]: { weight, quantity },
+      };
+      const newTotalWeight = Object.values(newQuantities).reduce(
+        (total, { weight, quantity }) => total + weight * quantity,
+        0
+      );
+      setTotalWeight(newTotalWeight);
+      return newQuantities;
+    });
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -20,6 +38,8 @@ const CustomerForm = () => {
       if (response.ok) {
         alert("Order sent successfully!");
         event.target.reset();
+        setTotalWeight(0); // Reset total weight
+        setQuantities({}); // Reset quantities
       } else {
         alert("Failed to send order.");
       }
@@ -38,6 +58,8 @@ const CustomerForm = () => {
           varenr="01059"
           imgSrc="/static/images/kosangas-5kg-light.jpg"
           inputName="Kosan Gas 5kg Light"
+          weight={5}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="10 kg Kosan Gas Light"
@@ -45,6 +67,8 @@ const CustomerForm = () => {
           varenr="01109"
           imgSrc="/static/images/kosangas-10kg-light.jpg"
           inputName="Kosan Gas 10kg Light"
+          weight={10}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="2 kg Kosan Gas"
@@ -52,6 +76,8 @@ const CustomerForm = () => {
           varenr="01021"
           imgSrc="/static/images/kosangas-2kg.webp"
           inputName="Kosan Gas 2kg"
+          weight={2}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="5 kg Kosan Gas Click-on"
@@ -59,6 +85,8 @@ const CustomerForm = () => {
           varenr="01050"
           imgSrc="/static/images/kosangas-5kg-click-on.webp"
           inputName="Kosan Gas 5kg Click-on"
+          weight={5}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="11 kg Kosan Gas Click-on"
@@ -66,6 +94,8 @@ const CustomerForm = () => {
           varenr="01110"
           imgSrc="/static/images/kosangas-11kg-click-on.jpg"
           inputName="Kosan Gas 11kg Click-on"
+          weight={11}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="22 kg Kosan Gas"
@@ -73,6 +103,8 @@ const CustomerForm = () => {
           varenr="01220"
           imgSrc="/static/images/kosangas-22kg.jpg"
           inputName="Kosan Gas 22kg"
+          weight={22}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="33 kg Kosan Gas"
@@ -80,6 +112,8 @@ const CustomerForm = () => {
           varenr="01330"
           imgSrc="/static/images/kosangas-33kg.webp"
           inputName="Kosan Gas 33kg"
+          weight={33}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="6 kg Kosan Gas Alu"
@@ -87,6 +121,8 @@ const CustomerForm = () => {
           varenr="01060"
           imgSrc="/static/images/kosangas-6kg-alu.jpg"
           inputName="6 kg Kosan Gas Alu"
+          weight={6}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="11 kg Kosan Gas Alu Truck"
@@ -94,6 +130,8 @@ const CustomerForm = () => {
           varenr="01112"
           imgSrc="/static/images/kosangas-11kg-alu-truck.webp"
           inputName="11 kg Kosan Gas Alu Truck"
+          weight={11}
+          onQuantityChange={handleQuantityChange}
         />
         <ProductCard
           name="3 kg CGI"
@@ -101,7 +139,12 @@ const CustomerForm = () => {
           varenr="01033"
           imgSrc="/static/images/kosangas-3kg-CGI.jpg"
           inputName="3 kg CGI"
+          weight={3}
+          onQuantityChange={handleQuantityChange}
         />
+      </div>
+      <div className="text-center my-4">
+        <h2 className="text-xl font-bold">Total Weight: {totalWeight} kg</h2>
       </div>
       <a href="#order-section" className="block text-center">
         <button
