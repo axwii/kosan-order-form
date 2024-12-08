@@ -88,7 +88,7 @@ export async function POST(req) {
     const confirmationMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: `Bekræftelse af din bestilling hos ${companyName}`,
+      subject: `Bekræftelse af din bestilling hos Kosan Gascenter København og Nordsjælland`,
       text: `
         Tak for din bestilling!
         Her er en oversigt over din ordre:
