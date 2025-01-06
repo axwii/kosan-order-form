@@ -183,7 +183,7 @@ const CustomerForm = () => {
             htmlFor="address"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
-            Adresse
+            Leveringsadresse
           </label>
           <input
             type="text"
