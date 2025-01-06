@@ -51,7 +51,7 @@ export async function POST(req) {
         Kundenummer: ${customerNumber}
         Reference nummer: ${referenceNumber}
         Telefon nummer: ${phoneNumber}
-        Adresse: ${address}
+        Leveringsadresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
         Produkter:
@@ -67,7 +67,7 @@ export async function POST(req) {
           referenceNumber || "Ikke angivet"
         }</strong></p>
         <p>Telefon nummer: <strong>${phoneNumber}</strong></p>
-        <p>Adresse: <strong>${address}</strong></p>
+        <p>Leveringsadresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
         <p><strong>Produkter:</strong></p>
