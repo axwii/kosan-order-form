@@ -9,6 +9,7 @@ export async function POST(req) {
     customerNumber,
     referenceNumber,
     phoneNumber,
+    contactPhoneNumber,
     address,
     postalCode,
     city,
@@ -50,7 +51,8 @@ export async function POST(req) {
         Email: ${email}
         Kundenummer: ${customerNumber}
         Reference nummer: ${referenceNumber}
-        Telefon nummer: ${phoneNumber}
+        Telefonnummer: ${phoneNumber}
+        Kontakt telefonnummer: ${contactPhoneNumber}
         Leveringsadresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
@@ -63,10 +65,9 @@ export async function POST(req) {
         <p>Firmanavn: <strong>${companyName}</strong></p>
         <p>Email: <strong>${email}</strong></p>
         <p>Kundenummer: <strong>${customerNumber}</strong></p>
-        <p>Reference nummer: <strong>${
-          referenceNumber || "Ikke angivet"
-        }</strong></p>
-        <p>Telefon nummer: <strong>${phoneNumber}</strong></p>
+        <p>Reference nummer: <strong>${referenceNumber || "Ikke angivet"}</strong></p>
+        <p>Telefonnummer: <strong>${phoneNumber}</strong></p>
+        <p>Kontakt telefonnummer: <strong>${contactPhoneNumber || "Ikke angivet"}</strong></p>
         <p>Leveringsadresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
@@ -97,7 +98,8 @@ export async function POST(req) {
         Email: ${email}
         Kundenummer: ${customerNumber}
         Reference nummer: ${referenceNumber}
-        Telefon nummer: ${phoneNumber}
+        Telefonnummer: ${phoneNumber}
+        Kontakt telefonnummer: ${contactPhoneNumber}
         Adresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
@@ -115,7 +117,8 @@ export async function POST(req) {
         <p>Reference nummer: <strong>${
           referenceNumber || "Ikke angivet"
         }</strong></p>
-        <p>Telefon nummer: <strong>${phoneNumber}</strong></p>
+        <p>Telefonnummer: <strong>${phoneNumber}</strong></p>
+        <p>Kontakt telefonnummer: <strong>${contactPhoneNumber || "Ikke angivet"}</strong></p>
         <p>Adresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
