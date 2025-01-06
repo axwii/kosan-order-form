@@ -163,10 +163,24 @@ const CustomerForm = () => {
         </div>
         <div className="mb-4">
           <label
+            htmlFor="contactName"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Kontakt person
+          </label>
+          <input
+            type="text"
+            id="contactName"
+            name="contactName"
+            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label
             htmlFor="phoneNumber"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
-            Telefonnummer
+            Kontakt telefonnummer
           </label>
           <input
             type="tel"
@@ -174,22 +188,6 @@ const CustomerForm = () => {
             name="phoneNumber"
             pattern="[0-9]+"
             required
-            autoComplete="tel"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="contactPhoneNumber"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Kontakt telefonnummer
-          </label>
-          <input
-            type="tel"
-            id="contactPhoneNumber"
-            name="contactPhoneNumber"
-            pattern="[0-9]+"
             autoComplete="tel"
             className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
           />
