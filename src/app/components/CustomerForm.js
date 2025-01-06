@@ -53,15 +53,15 @@ const CustomerForm = () => {
     <form onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto">
         {[
-          { name: "5 kg Kosan Gas Light", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 5 },
-          { name: "10 kg Kosan Gas Light", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 10 },
-          { name: "2 kg Kosan Gas", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 2 },
-          { name: "5 kg Kosan Gas Click-on", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 5 },
-          { name: "11 kg Kosan Gas Click-on", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 11 },
-          { name: "22 kg Kosan Gas", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
           { name: "33 kg Kosan Gas", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
-          { name: "6 kg Kosan Gas Alu", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 6 },
+          { name: "22 kg Kosan Gas", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
           { name: "11 kg Kosan Gas Alu Truck", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 11 },
+          { name: "11 kg Kosan Gas Click-on", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 11 },
+          { name: "10 kg Kosan Gas Light", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 10 },
+          { name: "6 kg Kosan Gas Alu", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 6 },
+          { name: "5 kg Kosan Gas Light", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 5 },
+          { name: "5 kg Kosan Gas Click-on", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 5 },
+          { name: "2 kg Kosan Gas", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 2 },
           { name: "3 kg CGI", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 3 }
         ].map((product) => (
           <ProductCard
