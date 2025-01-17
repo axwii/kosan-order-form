@@ -15,7 +15,7 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
   };
 
   const handleIncrement = () => {
-    setQuantity((prev) => Math.min(prev + 1, 200));
+    setQuantity((prev) => Math.min(prev + 1, 400));
   };
 
   const handleInputChange = (e) => {
@@ -25,7 +25,7 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
       const numericValue = parseInt(value, 10);
 
       if (!isNaN(numericValue)) {
-        setQuantity(Math.min(Math.max(numericValue, 0), 200));
+        setQuantity(Math.min(Math.max(numericValue, 0), 400));
       } else {
         setQuantity(0);
       }
