@@ -52,7 +52,7 @@ export async function POST(req) {
         Kundenummer: ${customerNumber}
         Reference nummer: ${referenceNumber}
         Telefonnummer: ${phoneNumber}
-        Kontakt telefonnummer: ${contactName}
+        Kontakt person: ${contactName}
         Leveringsadresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
@@ -67,7 +67,7 @@ export async function POST(req) {
         <p>Kundenummer: <strong>${customerNumber}</strong></p>
         <p>Reference nummer: <strong>${referenceNumber || "Ikke angivet"}</strong></p>
         <p>Telefonnummer: <strong>${phoneNumber}</strong></p>
-        <p>Kontakt telefonnummer: <strong>${contactName || "Ikke angivet"}</strong></p>
+        <p>Kontakt person: <strong>${contactName || "Ikke angivet"}</strong></p>
         <p>Leveringsadresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
@@ -99,7 +99,7 @@ export async function POST(req) {
         Kundenummer: ${customerNumber}
         Reference nummer: ${referenceNumber}
         Telefonnummer: ${phoneNumber}
-        Kontakt telefonnummer: ${contactName}
+        Kontakt person: ${contactName}
         Adresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
@@ -118,7 +118,7 @@ export async function POST(req) {
           referenceNumber || "Ikke angivet"
         }</strong></p>
         <p>Telefonnummer: <strong>${phoneNumber}</strong></p>
-        <p>Kontakt telefonnummer: <strong>${contactName || "Ikke angivet"}</strong></p>
+        <p>Kontakt person: <strong>${contactName || "Ikke angivet"}</strong></p>
         <p>Adresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
