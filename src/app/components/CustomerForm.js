@@ -5,6 +5,7 @@ import React, { useState } from "react";
 const CustomerForm = () => {
   const [totalWeight, setTotalWeight] = useState(0);
   const [quantities, setQuantities] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add this line
 
   const handleQuantityChange = (inputName, weight, quantity) => {
     setQuantities((prevQuantities) => {
@@ -23,6 +24,7 @@ const CustomerForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsSubmitting(true); // Disable the button
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
@@ -46,6 +48,8 @@ const CustomerForm = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("An error occurred.");
+    } finally {
+      setIsSubmitting(false); // Re-enable the button
     }
   };
 
@@ -264,6 +268,7 @@ const CustomerForm = () => {
         <button
           type="submit"
           className="w-full bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          disabled={isSubmitting} // Disable the button when submitting
         >
           Bestil Gas
         </button>
