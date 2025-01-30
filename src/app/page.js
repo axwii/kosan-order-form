@@ -15,11 +15,11 @@ export default function Home() {
       <section>
         <CustomerForm />
       </section>
-      <section>
+      {/* <section>
         <p className="mt-4 text-gray-700 text-center">
-          Alle bestillinger skal afgives inden kl. 12:00 for levering næste dag.
+          Alle bestillinger skal afgives inden kl. 12:00.
         </p>
-      </section>
+      </section> */}
     </main>
   );
 }

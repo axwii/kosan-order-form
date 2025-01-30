@@ -84,10 +84,13 @@ const CustomerForm = () => {
         <h2 className="text-2xl font-semibold text-gray-800">
           Totalvægt: <span className="text-blue-600">{totalWeight} kg</span>
         </h2>
-        <p className="mt-4 text-gray-700">
+        {/* <p className="mt-4 text-gray-700">
           Bemærk: Ordrer under <span className="font-bold">100 kg</span>{" "}
           pålægges et gebyr på
           <span className="text-red-600 font-bold"> 350 kr.</span>
+        </p> */}
+        <p className="mt-4 text-gray-700">
+        <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
         </p>
       </div>
       <a href="#order-section" className="block text-center">
