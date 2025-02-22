@@ -1,6 +1,8 @@
 "use client";
-import ProductCard from "./ProductCard";
 import React, { useState } from "react";
+import ProductCard from "./ProductCard";
+import FormInput from "./FormInput";
+import FormSection from "./FormSection";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -142,154 +144,18 @@ const CustomerForm = () => {
         </button>
       </a>
 
-      <div
-        id="order-section"
-        className="max-w-lg m-4 mt-20 sm:mx-auto p-4 bg-white border border-gray-300 rounded"
-      >
-        <h2 className="text-2xl font-bold text-center">Dine oplysninger</h2>
+      <FormSection title="Dine oplysninger">
+        <FormInput label="Firmanavn" id="companyName" name="companyName" required />
+        <FormInput label="Email" id="email" name="email" type="email" required autoComplete="email" />
+        <FormInput label="Kundenummer" id="customerNumber" name="customerNumber" inputMode="numeric" />
+        <FormInput label="Reference nummer" id="referenceNumber" name="referenceNumber" inputMode="numeric" />
+        <FormInput label="Kontakt person" id="contactName" name="contactName" />
+        <FormInput label="Kontakt telefonnummer" id="phoneNumber" name="phoneNumber" type="tel" pattern="[0-9]+" required autoComplete="tel" />
+        <FormInput label="Leveringsadresse" id="address" name="address" required />
+        <FormInput label="Postnummer" id="postalCode" name="postalCode" inputMode="numeric" required />
+        <FormInput label="By" id="city" name="city" required />
         <div className="mb-4">
-          <label
-            htmlFor="companyName"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Firmanavn
-          </label>
-          <input
-            type="text"
-            id="companyName"
-            name="companyName"
-            required
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            autoComplete="email"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="customerNumber"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Kundenummer
-          </label>
-          <input
-            type="text"
-            id="customerNumber"
-            name="customerNumber"
-            inputMode="numeric"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="referenceNumber"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Reference nummer
-          </label>
-          <input
-            type="text"
-            id="referenceNumber"
-            name="referenceNumber"
-            inputMode="numeric"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="contactName"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Kontakt person
-          </label>
-          <input
-            type="text"
-            id="contactName"
-            name="contactName"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="phoneNumber"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Kontakt telefonnummer
-          </label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            name="phoneNumber"
-            pattern="[0-9]+"
-            required
-            autoComplete="tel"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="address"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Leveringsadresse
-          </label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            required
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="postalCode"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Postnummer
-          </label>
-          <input
-            type="text"
-            id="postalCode"
-            name="postalCode"
-            inputMode="numeric"
-            required
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="city"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            By
-          </label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            required
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            htmlFor="terms"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
+          <label htmlFor="terms" className="block text-gray-700 text-sm font-bold mb-2">
             <input
               type="checkbox"
               id="terms"
@@ -315,7 +181,7 @@ const CustomerForm = () => {
         >
           Bestil Gas
         </button>
-      </div>
+      </FormSection>
     </form>
   );
 };
