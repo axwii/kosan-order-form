@@ -70,8 +70,8 @@ const CustomerForm = () => {
     <form onSubmit={handleSubmit}>
       <Slider {...settings}>
         <div>
-          <h2 className="text-center text-xl font-bold mb-4">Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded border border-gray-300">
+          <h2 className="text-center text-xl font-bold mb-4">Køb flasker</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
             {[
               { name: "33 kg Kosan Gas", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
               { name: "22 kg Kosan Gas", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
@@ -98,8 +98,8 @@ const CustomerForm = () => {
           </div>
         </div>
         <div>
-          <h2 className="text-center text-xl font-bold mb-4">Pickup Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded shadow">
+          <h2 className="text-center text-xl font-bold mb-4">Afhentning af flasker</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
             {[
               { name: "33 kg Kosan Gas Pickup", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 0 },
               { name: "22 kg Kosan Gas Pickup", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 0 },

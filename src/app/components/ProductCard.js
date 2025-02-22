@@ -33,14 +33,14 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
   };
 
   return (
-    <div className="flex m-4 p-4 border border-gray-300 rounded-lg">
+    <div className="flex m-4 p-4 border border-gray-300 rounded-lg bg-white">
       <figure style={{ position: "relative", width: "100px", height: "100px" }}>
         <Image
           src={imgSrc}
           alt={alt}
-          layout="fill"
-          objectFit="cover"
-          className="border border-gray-300 rounded-lg"
+          fill
+          style={{ objectFit: "cover" }}
+          className="border border-gray-300 rounded-lg bg-white"
         />
       </figure>
       <div className="flex flex-col justify-between flex-grow ml-4">
