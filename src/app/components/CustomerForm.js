@@ -1,11 +1,14 @@
 "use client";
 import ProductCard from "./ProductCard";
 import React, { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const CustomerForm = () => {
   const [totalWeight, setTotalWeight] = useState(0);
   const [quantities, setQuantities] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false); // Add this line
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleQuantityChange = (inputName, weight, quantity) => {
     setQuantities((prevQuantities) => {
@@ -24,7 +27,7 @@ const CustomerForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitting(true); // Disable the button
+    setIsSubmitting(true);
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
@@ -40,8 +43,8 @@ const CustomerForm = () => {
       if (response.ok) {
         alert("Order sent successfully!");
         event.target.reset();
-        setTotalWeight(0); // Reset total weight
-        setQuantities({}); // Reset quantities
+        setTotalWeight(0);
+        setQuantities({});
       } else {
         alert("Failed to send order.");
       }
@@ -49,48 +52,85 @@ const CustomerForm = () => {
       console.error("Error submitting form:", error);
       alert("An error occurred.");
     } finally {
-      setIsSubmitting(false); // Re-enable the button
+      setIsSubmitting(false);
     }
+  };
+
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto">
-        {[
-          { name: "33 kg Kosan Gas", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
-          { name: "22 kg Kosan Gas", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
-          { name: "11 kg Kosan Gas Alu Truck", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 11 },
-          { name: "11 kg Kosan Gas Click-on", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 11 },
-          { name: "10 kg Kosan Gas Light", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 10 },
-          { name: "6 kg Kosan Gas Alu", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 6 },
-          { name: "5 kg Kosan Gas Light", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 5 },
-          { name: "5 kg Kosan Gas Click-on", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 5 },
-          { name: "2 kg Kosan Gas", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 2 },
-          { name: "3 kg CGI", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 3 }
-        ].map((product) => (
-          <ProductCard
-            key={product.varenr}
-            name={product.name}
-            alt={product.name}
-            varenr={product.varenr}
-            imgSrc={product.imgSrc}
-            inputName={product.name}
-            weight={product.weight}
-            onQuantityChange={handleQuantityChange}
-          />
-        ))}
-      </div>
+      <Slider {...settings}>
+        <div>
+          <h2 className="text-center text-xl font-bold mb-4">Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded border border-gray-300">
+            {[
+              { name: "33 kg Kosan Gas", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
+              { name: "22 kg Kosan Gas", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
+              { name: "11 kg Kosan Gas Alu Truck", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 11 },
+              { name: "11 kg Kosan Gas Click-on", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 11 },
+              { name: "10 kg Kosan Gas Light", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 10 },
+              { name: "6 kg Kosan Gas Alu", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 6 },
+              { name: "5 kg Kosan Gas Light", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 5 },
+              { name: "5 kg Kosan Gas Click-on", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 5 },
+              { name: "2 kg Kosan Gas", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 2 },
+              { name: "3 kg CGI", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 3 }
+            ].map((product) => (
+              <ProductCard
+                key={product.varenr}
+                name={product.name}
+                alt={product.name}
+                varenr={product.varenr}
+                imgSrc={product.imgSrc}
+                inputName={product.name}
+                weight={product.weight}
+                onQuantityChange={handleQuantityChange}
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 className="text-center text-xl font-bold mb-4">Pickup Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded shadow">
+            {[
+              { name: "33 kg Kosan Gas Pickup", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
+              { name: "22 kg Kosan Gas Pickup", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 22 },
+              { name: "11 kg Kosan Gas Alu Truck Pickup", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 11 },
+              { name: "11 kg Kosan Gas Click-on Pickup", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 11 },
+              { name: "10 kg Kosan Gas Light Pickup", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 10 },
+              { name: "6 kg Kosan Gas Alu Pickup", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 6 },
+              { name: "5 kg Kosan Gas Light Pickup", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 5 },
+              { name: "5 kg Kosan Gas Click-on Pickup", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 5 },
+              { name: "2 kg Kosan Gas Pickup", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 2 },
+              { name: "3 kg CGI Pickup", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 3 }
+            ].map((product) => (
+              <ProductCard
+                key={product.varenr + "-pickup"}
+                name={product.name}
+                alt={product.name}
+                varenr={product.varenr}
+                imgSrc={product.imgSrc}
+                inputName={product.name}
+                weight={product.weight}
+                onQuantityChange={handleQuantityChange}
+              />
+            ))}
+          </div>
+        </div>
+      </Slider>
+
       <div className="bg-gray-100 p-6 text-center my-8">
         <h2 className="text-2xl font-semibold text-gray-800">
           Totalvægt: <span className="text-blue-600">{totalWeight} kg</span>
         </h2>
-        {/* <p className="mt-4 text-gray-700">
-          Bemærk: Ordrer under <span className="font-bold">100 kg</span>{" "}
-          pålægges et gebyr på
-          <span className="text-red-600 font-bold"> 350 kr.</span>
-        </p> */}
         <p className="mt-4 text-gray-700">
-        <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
+          <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
         </p>
       </div>
       <a href="#order-section" className="block text-center">
@@ -271,7 +311,7 @@ const CustomerForm = () => {
         <button
           type="submit"
           className="w-full bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          disabled={isSubmitting} // Disable the button when submitting
+          disabled={isSubmitting}
         >
           Bestil Gas
         </button>
