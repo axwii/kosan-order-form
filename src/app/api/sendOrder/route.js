@@ -31,7 +31,19 @@ export async function POST(req) {
       },
     });
 
-    const productRows = Object.entries(products)
+    const regularProductRows = Object.entries(products)
+      .filter(([key]) => !key.includes("Pickup"))
+      .map(
+        ([key, value]) =>
+          `<tr>
+             <td style="padding: 8px; border: 1px solid #ddd;">${key}</td>
+             <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${value}</td>
+           </tr>`
+      )
+      .join("");
+
+    const pickupProductRows = Object.entries(products)
+      .filter(([key]) => key.includes("Pickup"))
       .map(
         ([key, value]) =>
           `<tr>
@@ -65,16 +77,28 @@ export async function POST(req) {
         <p>Leveringsadresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
-        <p><strong>Produkter:</strong></p>
+        <p><strong>Bestilling:</strong></p>
         <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
           <thead>
             <tr>
-              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Produkt</th>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Flaske</th>
               <th style="padding: 8px; border: 1px solid #ddd; background-color: #f4f4f4;">Antal</th>
             </tr>
           </thead>
           <tbody>
-            ${productRows}
+            ${regularProductRows}
+          </tbody>
+        </table>
+        <p><strong>Afhentning af flasker:</strong></p>
+        <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+          <thead>
+            <tr>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #e7e7e7;">Flaske</th>
+              <th style="padding: 8px; border: 1px solid #ddd; background-color: #e7e7e7;">Antal</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${pickupProductRows}
           </tbody>
         </table>
       `,
