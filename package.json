@@ -6,7 +6,8 @@
     "dev": "npm install --legacy-peer-deps && next dev --turbopack",
     "build": "npm install --legacy-peer-deps && next build",
     "start": "npm install --legacy-peer-deps && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "npm install --legacy-peer-deps && npm run build"
   },
   "dependencies": {
     "next": "15.0.3",
