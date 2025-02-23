@@ -6,8 +6,7 @@
     "dev": "npm install --legacy-peer-deps && next dev --turbopack",
     "build": "npm install --legacy-peer-deps && next build",
     "start": "npm install --legacy-peer-deps && next start",
-    "lint": "next lint",
-    "vercel-build": "npm install --legacy-peer-deps && npm run build"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "^14.2.24",
@@ -22,11 +21,5 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   },
-  "installCommand": "npm install --legacy-peer-deps",
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "installCommand": "npm install --legacy-peer-deps"
-  }
+  "installCommand": "npm install --legacy-peer-deps"
 }
