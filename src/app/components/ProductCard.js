@@ -39,6 +39,7 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
           src={imgSrc}
           alt={alt}
           fill
+          sizes="(min-width: 640px) 100px, 50px"
           style={{ objectFit: "cover" }}
           className="border border-gray-300 rounded-lg bg-white"
         />
