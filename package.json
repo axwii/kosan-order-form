@@ -21,5 +21,11 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   },
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "installCommand": "npm install --legacy-peer-deps"
+  }
 }
