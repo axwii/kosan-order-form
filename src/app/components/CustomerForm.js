@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProductCard from "./ProductCard";
 import FormInput from "./FormInput";
 import FormSection from "./FormSection";
@@ -11,6 +11,7 @@ const CustomerForm = () => {
   const [totalWeight, setTotalWeight] = useState(0);
   const [quantities, setQuantities] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const sliderRef = useRef(null);
 
   const handleQuantityChange = (inputName, weight, quantity) => {
     setQuantities((prevQuantities) => {
@@ -68,9 +69,9 @@ const CustomerForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Slider {...settings}>
-        <div>
-          <h2 className="text-center text-xl font-bold mb-4">Køb flasker</h2>
+      <Slider ref={sliderRef} {...settings}>
+        <div id="form-section">
+          <h2 className="text-center text-xl font-bold mb-4">Bestil flasker</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
             {[
               { name: "33 kg Kosan Gas", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 33 },
@@ -135,6 +136,15 @@ const CustomerForm = () => {
           <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
         </p>
       </div>
+      <a href="#form-section" className="block text-center mb-4">
+        <button
+          type="button"
+          onClick={() => sliderRef.current.slickNext()}
+          className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline mt-4"
+        >
+          Bestil afhentning af flasker
+        </button>
+      </a>
       <a href="#order-section" className="block text-center">
         <button
           type="button"
