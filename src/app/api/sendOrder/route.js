@@ -32,7 +32,7 @@ export async function POST(req) {
     });
 
     const regularProductRows = Object.entries(products)
-      .filter(([key]) => !key.includes("Pickup"))
+      .filter(([key]) => !key.includes("Afhentning"))
       .map(
         ([key, value]) =>
           `<tr>
@@ -43,7 +43,7 @@ export async function POST(req) {
       .join("");
 
     const pickupProductRows = Object.entries(products)
-      .filter(([key]) => key.includes("Pickup"))
+      .filter(([key]) => key.includes("Afhentning"))
       .map(
         ([key, value]) =>
           `<tr>

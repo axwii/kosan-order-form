@@ -101,16 +101,16 @@ const CustomerForm = () => {
           <h2 className="text-center text-xl font-bold mb-4">Afhentning af flasker</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
             {[
-              { name: "33 kg Kosan Gas Pickup", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 0 },
-              { name: "22 kg Kosan Gas Pickup", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 0 },
-              { name: "11 kg Kosan Gas Alu Truck Pickup", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 0 },
-              { name: "11 kg Kosan Gas Click-on Pickup", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 0 },
-              { name: "10 kg Kosan Gas Light Pickup", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 0 },
-              { name: "6 kg Kosan Gas Alu Pickup", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 0 },
-              { name: "5 kg Kosan Gas Light Pickup", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 0 },
-              { name: "5 kg Kosan Gas Click-on Pickup", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 0 },
-              { name: "2 kg Kosan Gas Pickup", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 0 },
-              { name: "3 kg CGI Pickup", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 0 }
+              { name: "33 kg Kosan Gas - Afhentning", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 0 },
+              { name: "22 kg Kosan Gas - Afhentning", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 0 },
+              { name: "11 kg Kosan Gas Alu Truck - Afhentning", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 0 },
+              { name: "11 kg Kosan Gas Click-on - Afhentning", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 0 },
+              { name: "10 kg Kosan Gas Light - Afhentning", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 0 },
+              { name: "6 kg Kosan Gas Alu - Afhentning", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 0 },
+              { name: "5 kg Kosan Gas Light - Afhentning", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 0 },
+              { name: "5 kg Kosan Gas Click-on - Afhentning", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 0 },
+              { name: "2 kg Kosan Gas - Afhentning", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 0 },
+              { name: "3 kg CGI - Afhentning", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 0 }
             ].map((product) => (
               <ProductCard
                 key={product.varenr + "-pickup"}
