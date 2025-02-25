@@ -6,6 +6,7 @@ import FormSection from "./FormSection";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../globals.css";
 
 const CustomerForm = () => {
   const [totalWeight, setTotalWeight] = useState(0);
@@ -65,6 +66,16 @@ const CustomerForm = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendDots: dots => (
+      <div>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: i => (
+      <div className="custom-dot">
+        {i === 0 ? "Bestil flasker" : "Afhentning af flasker"}
+      </div>
+    ),
   };
 
   return (
@@ -132,16 +143,11 @@ const CustomerForm = () => {
         <h2 className="text-2xl font-semibold text-gray-800">
           Totalvægt: <span className="text-blue-600">{totalWeight} kg</span>
         </h2>
-        {/* <p className="mt-4 text-gray-700">
-          Bemærk: Ordrer under <span className="font-bold">100 kg</span>{" "}
-          pålægges et gebyr på
-          <span className="text-red-600 font-bold"> 350 kr.</span>
-        </p> */}
         <p className="mt-4 text-gray-700">
           <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
         </p>
       </div>
-      <a href="#form-section" className="block text-center mb-4">
+      {/* <a href="#form-section" className="block text-center mb-4">
         <button
           type="button"
           onClick={() => sliderRef.current.slickNext()}
@@ -149,8 +155,8 @@ const CustomerForm = () => {
         >
           Bestil afhentning af flasker
         </button>
-      </a>
-      <a href="#order-section" className="block text-center">
+      </a> */}
+      <a href="#order-section" className="block text-center xl:hidden">
         <button
           type="button"
           className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline"

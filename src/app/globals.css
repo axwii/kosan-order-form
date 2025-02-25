@@ -55,3 +55,43 @@ body {
   border-left: none;
   border-radius: 0 4px 4px 0;
 }
+
+.custom-dot {
+  min-width: 80px; /* min-w-80 */
+  height: 30px;
+  font-weight: bold; /* font-bold */
+  padding: 1.3rem 16px; /* py-2 px-4 */
+  margin-top: 4px; /* mt-4 */
+  background-color: #5B7813;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 -90px; /* Increase the margin to add more space between dots */
+}
+
+.custom-dot:hover {
+  background-color: #6A8B1A; /* Slightly lighter shade for hover */
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  bottom: 0;
+  position: relative;
+}
+
+.slick-dots li {
+  margin: 0 100px; /* Increase the margin to add more space between dots */
+  margin-top: 5px;
+  margin-bottom: 2rem;
+}
+
+.slick-dots li.slick-active .custom-dot {
+  background-color: #4A6510; /* Darker shade for active state */
+  outline: 2px solid #2563EB;
+  box-shadow: 0 0 0 4px #fff; /* Add space between the outline and the box */
+  border: 3px solid #fff;
+}
