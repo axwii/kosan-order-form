@@ -111,7 +111,7 @@ const CustomerForm = () => {
         </div>
         <div>
           <h2 className="text-center text-xl font-bold mb-4">Afhentning af flasker</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 rounded-xl border border-gray-300 bg-kosan-dark-sand">
             {[
               { name: "33 kg Kosan Gas - Afhentning", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 0 },
               { name: "22 kg Kosan Gas - Afhentning", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 0 },
