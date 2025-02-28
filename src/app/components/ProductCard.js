@@ -3,7 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityChange }) => {
+const ProductCard = ({
+  name,
+  alt,
+  varenr,
+  imgSrc,
+  inputName,
+  weight,
+  onQuantityChange,
+}) => {
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
@@ -32,6 +40,22 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
     }
   };
 
+  const highlightAfhentning = (name) => {
+    const parts = name.split(/(afhentning)/i);
+    return parts.map((part, index) =>
+      part.toLowerCase() === "afhentning" ? (
+        <span
+          key={index}
+          className="bg-cutom-red text-white rounded py-1 px-1 ml-1"
+        >
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
+
   return (
     <div className="flex m-4 p-4 border border-gray-300 rounded-lg bg-white">
       <figure style={{ position: "relative", width: "100px", height: "100px" }}>
@@ -46,11 +70,16 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
       </figure>
       <div className="flex flex-col justify-between flex-grow ml-4">
         <div>
-          <h1 className="font-bold">{name}</h1>
+          <h1 className="font-bold">{highlightAfhentning(name)}</h1>
           <p>Varenr. {varenr}</p>
         </div>
+        {!name.toLowerCase().includes("afhentning") && (
+          <div className="w-3 h-3 bg-custom-green rounded-full"></div>
+        )}
         <div className="flex justify-end">
-          <span className="input-number-decrement" onClick={handleDecrement}>–</span>
+          <span className="input-number-decrement" onClick={handleDecrement}>
+            –
+          </span>
           <input
             className="input-number"
             type="text"
@@ -58,7 +87,9 @@ const ProductCard = ({ name, alt, varenr, imgSrc, inputName, weight, onQuantityC
             value={quantity}
             onChange={handleInputChange}
           />
-          <span className="input-number-increment" onClick={handleIncrement}>+</span>
+          <span className="input-number-increment" onClick={handleIncrement}>
+            +
+          </span>
         </div>
       </div>
     </div>

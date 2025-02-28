@@ -1,40 +1,55 @@
 .custom-dot {
-    min-width: 80px; /* min-w-80 */
-    height: 30px;
-    font-weight: bold; /* font-bold */
-    padding: 1.3rem 16px; /* py-2 px-4 */
-    margin-top: 4px; /* mt-4 */
-    background-color: #5B7813;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 -90px; /* Increase the margin to add more space between dots */
-  }
-  
-  .custom-dot:hover {
-    background-color: #6A8B1A; /* Slightly lighter shade for hover */
-  }
-  
-  .slick-dots {
-    display: flex !important;
-    justify-content: center;
-    bottom: 0;
-    position: relative;
-  }
-  
-  .slick-dots li {
-    margin: 0 100px; /* Increase the margin to add more space between dots */
-    margin-top: 5px;
-    margin-bottom: 2rem;
-  }
-  
-  .slick-dots li.slick-active .custom-dot {
-    background-color: #4A6510; /* Darker shade for active state */
-    outline: 2px solid #2563EB;
-    box-shadow: 0 0 0 4px #fff; /* Add space between the outline and the box */
-    border: 3px solid #fff;
-  }
-  
+  min-width: 80px; /* min-w-80 */
+  height: 30px;
+  font-weight: bold; /* font-bold */
+  padding: 1.3rem 16px; /* py-2 px-4 */
+  margin-top: 4px; /* mt-4 */
+  background-color: #5b7813;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 -100px; /* Increase the margin to add more space between dots */
+}
+
+.custom-dot:hover {
+  background-color: #6a8b1a; /* Slightly lighter shade for hover */
+}
+
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  bottom: 0;
+  position: relative;
+}
+
+.slick-dots li {
+  margin: 0 110px; /* Increase the margin to add more space between dots */
+  margin-top: 5px;
+  margin-bottom: 2rem;
+}
+
+.slick-dots li.slick-active .custom-dot {
+  background-color: #4a6510; /* Darker shade for active state */
+  outline: 2px solid #2563eb;
+  box-shadow: 0 0 0 4px #fff; /* Add space between the outline and the box */
+  border: 3px solid #fff;
+}
+
+.slick-dots li:nth-child(2) .custom-dot {
+  background-color: #871c1c; /* Default background color for the second dot */
+}
+
+.slick-dots li:nth-child(2) .custom-dot:hover {
+  background-color: #9e2323; /* Hover background color for the second dot */
+}
+
+.slick-dots li:nth-child(2).slick-active .custom-dot {
+  background-color: #701717; /* Active background color for the second dot */
+}
+
+.slick-next {
+  display: none !important;
+}

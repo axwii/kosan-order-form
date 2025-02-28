@@ -7,7 +7,7 @@ export default function Home() {
     <main role="main">
       <header className="text-center my-4">
         <h1 className="text-4xl font-bold mx-4">Kosan Gasbestilling</h1>
-        <p className="text-lg text-gray-700 mt-2 mx-4">
+        <p className="text-lg text-gray-700 mt-2 mb-10 mx-4">
           Velkommen til Kosan Gascenter København og Nordsjælland's
           gasbestilling
         </p>

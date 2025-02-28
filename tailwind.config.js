@@ -19,6 +19,8 @@ module.exports = {
         'kosan-dark-purple': 'rgb(124, 27, 103)',
         'kosan-light-sand': 'rgb(238, 234, 213)',
         'kosan-dark-sand': 'rgb(146, 143, 122)',
+        'cutom-red': '#701717',
+        'custom-green-active': '#4A6510',
       },
     },
   },
