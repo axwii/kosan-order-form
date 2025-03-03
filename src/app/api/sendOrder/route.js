@@ -14,6 +14,7 @@ export async function POST(req) {
     postalCode,
     city,
     terms,
+    comments,
     ...products
   } = body;
 
@@ -64,6 +65,7 @@ export async function POST(req) {
         Leveringsadresse: ${address}
         Postnummer: ${postalCode}
         By: ${city}
+        Kommentarer: ${comments}
         Produkter:
         ${Object.entries(products).map(([key, value]) => `${key}: ${value}`).join("\n")}
       `,
@@ -77,6 +79,7 @@ export async function POST(req) {
         <p>Leveringsadresse: <strong>${address}</strong></p>
         <p>Postnummer: <strong>${postalCode}</strong></p>
         <p>By: <strong>${city}</strong></p>
+        <p>Kommentarer: <strong>${comments || "Ingen kommentarer"}</strong></p>
         <p><strong>Bestilling:</strong></p>
         <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
           <thead>

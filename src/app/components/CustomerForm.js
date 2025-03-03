@@ -182,6 +182,17 @@ const CustomerForm = () => {
         <FormInput label="Postnummer" id="postalCode" name="postalCode" inputMode="numeric" required />
         <FormInput label="By" id="city" name="city" required />
         <div className="mb-4">
+          <label htmlFor="comments" className="block text-gray-700 text-sm font-bold mb-2">
+            Kommentarer
+          </label>
+          <textarea
+            id="comments"
+            name="comments"
+            rows="3"
+            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+          ></textarea>
+        </div>
+        <div className="mb-4">
           <label htmlFor="terms" className="block text-gray-700 text-sm font-bold mb-2">
             <input
               type="checkbox"
