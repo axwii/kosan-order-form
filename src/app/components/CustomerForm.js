@@ -7,11 +7,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CustomerForm.css";
+import TermsModal from "./TermsModal"; 
 
 const CustomerForm = () => {
   const [totalWeight, setTotalWeight] = useState(0);
   const [quantities, setQuantities] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const sliderRef = useRef(null);
 
   const handleQuantityChange = (inputName, weight, quantity) => {
@@ -199,17 +201,15 @@ const CustomerForm = () => {
               id="terms"
               name="terms"
               required
-              className="mr-2 leading-tight"
-            />
+              className="mr-2 leading-tight" />
             Jeg accepterer{" "}
-            <a
-              href="https://u7sqa0-8k.myshopify.com/policies/terms-of-service"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setIsModalOpen(true)}
               className="text-blue-500 hover:underline"
             >
               handelsbetingelser
-            </a>
+            </button>
           </label>
         </div>
         <button
@@ -219,6 +219,7 @@ const CustomerForm = () => {
         >
           Gennemfør bestilling
         </button>
+        <TermsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </FormSection>
     </form>
   );
