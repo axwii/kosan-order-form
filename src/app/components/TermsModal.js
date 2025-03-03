@@ -62,8 +62,8 @@ export default function TermsModal({ isOpen, onClose }) {
         <p className="font-semibold">3.1 Priser</p>
         <ul className="list-disc list-inside">
           <li>
-            Alle priser på hjemmesiden er angivet i danske kroner (DKK) excl.
-            moms, men ekskl. leveringsomkostninger.
+            Alle priser på hjemmesiden er angivet i danske kroner (DKK) ekskl.
+            moms og ekskl. leveringsomkostninger.
           </li>
           <li>Vi forbeholder os retten til at ændre priser uden varsel.</li>
         </ul>
