@@ -73,7 +73,7 @@ const CustomerForm = () => {
     ),
     customPaging: i => (
       <div className="custom-dot">
-        {i === 0 ? "Bestil flasker" : "Afhentning returflasker"}
+        {i === 0 ? "Gasbestilling" : "Afhentning returflasker"}
       </div>
     ),
   };
@@ -83,7 +83,7 @@ const CustomerForm = () => {
       <Slider ref={sliderRef} {...settings}>
         <div id="form-section">
             <div className="max-w-5xl mx-auto p-4 bg-custom-green-active rounded-t-xl border border-b-0 border-gray-300 -mb-4">
-              <h2 className="text-center text-xl font-bold mb-2 text-white">Bestil flasker</h2>
+              <h2 className="text-center text-xl font-bold mb-2 text-white">Gasbestilling</h2>
               <p className="text-center mb-2 text-white">Vælg de gasflasker, du ønsker at bestille.</p>
             </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 bg-white rounded-xl border border-gray-300">
