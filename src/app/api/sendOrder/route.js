@@ -43,17 +43,6 @@ export async function POST(req) {
       )
       .join("");
 
-    const pickupProductRows = Object.entries(products)
-      .filter(([key]) => key.includes("Afhentning"))
-      .map(
-        ([key, value]) =>
-          `<tr>
-             <td style="padding: 8px; border: 1px solid #ddd;">${key}</td>
-             <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${value}</td>
-           </tr>`
-      )
-      .join("");
-
     const emailContent = {
       text: `
         Firmanavn: ${companyName}
@@ -67,7 +56,7 @@ export async function POST(req) {
         By: ${city}
         Kommentarer: ${comments}
         Produkter:
-        ${Object.entries(products).map(([key, value]) => `${key}: ${value}`).join("\n")}
+        ${Object.entries(products).filter(([key]) => !key.includes("Afhentning")).map(([key, value]) => `${key}: ${value}`).join("\n")}
       `,
       html: `
         <p>Firmanavn: <strong>${companyName}</strong></p>
@@ -90,18 +79,6 @@ export async function POST(req) {
           </thead>
           <tbody>
             ${regularProductRows}
-          </tbody>
-        </table>
-        <p><strong>Afhentning af flasker:</strong></p>
-        <table style="border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
-          <thead>
-            <tr>
-              <th style="padding: 8px; border: 1px solid #ddd; background-color: #e7e7e7;">Flaske</th>
-              <th style="padding: 8px; border: 1px solid #ddd; background-color: #e7e7e7;">Antal</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${pickupProductRows}
           </tbody>
         </table>
       `,

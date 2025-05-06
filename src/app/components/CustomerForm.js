@@ -3,9 +3,6 @@ import React, { useState, useRef } from "react";
 import ProductCard from "./ProductCard";
 import FormInput from "./FormInput";
 import FormSection from "./FormSection";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./CustomerForm.css";
 import TermsModal from "./TermsModal"; 
 
@@ -14,7 +11,6 @@ const CustomerForm = () => {
   const [quantities, setQuantities] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const sliderRef = useRef(null);
 
   const handleQuantityChange = (inputName, weight, quantity) => {
     setQuantities((prevQuantities) => {
@@ -62,27 +58,8 @@ const CustomerForm = () => {
     }
   };
 
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    appendDots: dots => (
-      <div>
-        <ul style={{ margin: "0px" }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: i => (
-      <div className="custom-dot">
-        {i === 0 ? "Gasbestilling" : "Afhentning returflasker"}
-      </div>
-    ),
-  };
-
   return (
     <form onSubmit={handleSubmit}>
-      <Slider ref={sliderRef} {...settings}>
         <div id="form-section">
             <div className="max-w-5xl mx-auto p-4 bg-custom-green-active rounded-t-xl border border-b-0 border-gray-300 -mb-4">
               <h2 className="text-center text-xl font-bold mb-2 text-white">Gasbestilling</h2>
@@ -114,38 +91,6 @@ const CustomerForm = () => {
             ))}
           </div>
         </div>
-        <div>
-          <div className="max-w-5xl mx-auto p-4 bg-cutom-red rounded-t-xl border border-b-0 border-gray-300 -mb-4">
-              <h2 className="text-center text-xl font-bold mb-2 text-white">Afhentning returflasker</h2>
-              <p className="text-center mb-2 text-white">Angiv de returflasker, du vil have afhentet.</p>
-            </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 max-w-5xl mx-auto p-4 rounded-xl border border-gray-300 bg-white">
-            {[
-              { name: "33 kg Kosan Gas Afhentning", varenr: "01330", imgSrc: "/static/images/kosangas-33kg.webp", weight: 0 },
-              { name: "22 kg Kosan Gas Afhentning", varenr: "01220", imgSrc: "/static/images/kosangas-22kg.jpg", weight: 0 },
-              { name: "11 kg Kosan Gas Alu Truck Afhentning", varenr: "01112", imgSrc: "/static/images/kosangas-11kg-alu-truck.webp", weight: 0 },
-              { name: "11 kg Kosan Gas Click-on Afhentning", varenr: "01110", imgSrc: "/static/images/kosangas-11kg-click-on.jpg", weight: 0 },
-              { name: "10 kg Kosan Gas Light Afhentning", varenr: "01109", imgSrc: "/static/images/kosangas-10kg-light.jpg", weight: 0 },
-              { name: "6 kg Kosan Gas Alu Afhentning", varenr: "01060", imgSrc: "/static/images/kosangas-6kg-alu.jpg", weight: 0 },
-              { name: "5 kg Kosan Gas Light Afhentning", varenr: "01059", imgSrc: "/static/images/kosangas-5kg-light.jpg", weight: 0 },
-              { name: "5 kg Kosan Gas Click-on Afhentning", varenr: "01050", imgSrc: "/static/images/kosangas-5kg-click-on.webp", weight: 0 },
-              { name: "2 kg Kosan Gas Afhentning", varenr: "01021", imgSrc: "/static/images/kosangas-2kg.webp", weight: 0 },
-              { name: "3 kg CGI Afhentning", varenr: "01033", imgSrc: "/static/images/kosangas-3kg-CGI.jpg", weight: 0 }
-            ].map((product) => (
-              <ProductCard
-                key={product.varenr + "-pickup"}
-                name={product.name}
-                alt={product.name}
-                varenr={product.varenr}
-                imgSrc={product.imgSrc}
-                inputName={product.name}
-                weight={product.weight}
-                onQuantityChange={handleQuantityChange}
-              />
-            ))}
-          </div>
-        </div>
-      </Slider>
 
       <div className="bg-gray-100 p-6 text-center my-8">
         <h2 className="text-2xl font-semibold text-gray-800">
@@ -155,15 +100,6 @@ const CustomerForm = () => {
           <span className="text-red-600 font-bold"> Bemærk:</span> Alle bestillinger skal afgives inden kl. 12:00
         </p>
       </div>
-      {/* <a href="#form-section" className="block text-center mb-4">
-        <button
-          type="button"
-          onClick={() => sliderRef.current.slickNext()}
-          className="bg-custom-green hover:bg-custom-green-hover text-white font-bold py-2 px-4 min-w-80 rounded focus:outline-none focus:shadow-outline mt-4"
-        >
-          Bestil afhentning af flasker
-        </button>
-      </a> */}
       <a href="#order-section" className="block text-center xl:hidden">
         <button
           type="button"
