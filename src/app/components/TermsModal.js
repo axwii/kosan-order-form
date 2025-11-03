@@ -98,10 +98,10 @@ export default function TermsModal({ isOpen, onClose }) {
           <li>
             Kontakt os på{" "}
             <a
-              href="mailto:mail@kosan-albertslund.dk"
+              href="mailto:support@kosan-albertslund.dk"
               className="text-blue-500 underline"
             >
-              mail@kosan-albertslund.dk
+              support@kosan-albertslund.dk
             </a>{" "}
             eller +45 4362 3020 for returnering.
           </li>
@@ -128,10 +128,10 @@ export default function TermsModal({ isOpen, onClose }) {
           <li>
             Kontakt os på{" "}
             <a
-              href="mailto:mail@kosan-albertslund.dk"
+              href="mailto:support@kosan-albertslund.dk"
               className="text-blue-500 underline"
             >
-              mail@kosan-albertslund.dk
+              support@kosan-albertslund.dk
             </a>{" "}
             / +45 4362 3020.
           </li>
@@ -182,10 +182,10 @@ export default function TermsModal({ isOpen, onClose }) {
           <li>
             E-mail:{" "}
             <a
-              href="mailto:mail@kosan-albertslund.dk"
+              href="mailto:support@kosan-albertslund.dk"
               className="text-blue-500 underline"
             >
-              mail@kosan-albertslund.dk
+              support@kosan-albertslund.dk
             </a>
           </li>
           <li>Adresse: Djursvang 6A, 2620 Albertslund</li>
