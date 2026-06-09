@@ -110,26 +110,32 @@ const CustomerForm = () => {
       </a>
 
       <FormSection title="Dine oplysninger">
-        <FormInput label="Firmanavn" id="companyName" name="companyName" required />
-        <FormInput label="Email" id="email" name="email" type="email" required autoComplete="email" />
-        <FormInput label="Kundenummer" id="customerNumber" name="customerNumber" inputMode="numeric" />
-        <FormInput label="Reference nummer" id="referenceNumber" name="referenceNumber" inputMode="numeric" />
-        <FormInput label="Kontakt person" id="contactName" name="contactName" />
-        <FormInput label="Kontakt telefonnummer" id="phoneNumber" name="phoneNumber" type="tel" pattern="[0-9]+" required autoComplete="tel" />
-        <FormInput label="Leveringsadresse" id="address" name="address" required />
-        <FormInput label="Postnummer" id="postalCode" name="postalCode" inputMode="numeric" required />
-        <FormInput label="By" id="city" name="city" required />
-        <div className="mb-4">
-          <label htmlFor="comments" className="block text-gray-700 text-sm font-bold mb-2">
-            Kommentarer
-          </label>
-          <textarea
-            id="comments"
-            name="comments"
-            rows="3"
-            className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
-          ></textarea>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <FormInput label="Firmanavn" id="companyName" name="companyName" required />
+            <FormInput label="Email" id="email" name="email" type="email" required autoComplete="email" />
+            <FormInput label="Kundenummer" id="customerNumber" name="customerNumber" inputMode="numeric" />
+            <FormInput label="Reference nummer" id="referenceNumber" name="referenceNumber" inputMode="numeric" />
+            <FormInput label="Kontakt person" id="contactName" name="contactName" />
+            <FormInput label="Kontakt telefonnummer" id="phoneNumber" name="phoneNumber" type="tel" pattern="[0-9]+" required autoComplete="tel" />
+            <FormInput label="Leveringsadresse" id="address" name="address" required />
+            <FormInput label="Postnummer" id="postalCode" name="postalCode" inputMode="numeric" required />
+            <FormInput label="By" id="city" name="city" required />
+            <div className="mb-4">
+              <label htmlFor="comments" className="block text-gray-700 text-sm font-bold mb-2">
+                Kommentarer
+              </label>
+              <textarea
+                id="comments"
+                name="comments"
+                rows="1"
+                className="appearance-none border border-gray-300 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
+              ></textarea>
+            </div>
+
         </div>
+
         <div className="mb-4">
           <label htmlFor="terms" className="block text-gray-700 text-sm font-bold mb-2">
             <input
