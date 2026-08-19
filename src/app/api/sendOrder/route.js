@@ -107,14 +107,14 @@ export async function POST(req) {
     await transporter.sendMail(confirmationMailOptions);
 
     return NextResponse.json(
-      { message: "Bestillingen er sendt! Tak for din ordre." },
+      { message: "Bestillingen er sendt! Tak for din ordre.",
+        emailUser: process.env.EMAIL_USER },
       { status: 200 }
     );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { message: "Ups! Noget gik galt. Prøv igen eller kontakt os for hjælp.",
-          emailUser: process.env.EMAIL_USER},
+      { message: "Ups! Noget gik galt. Prøv igen eller kontakt os for hjælp." },
       { status: 500 }
     );
   }
