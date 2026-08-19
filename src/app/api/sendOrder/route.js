@@ -113,7 +113,8 @@ export async function POST(req) {
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { message: "Ups! Noget gik galt. Prøv igen eller kontakt os for hjælp." },
+      { message: "Ups! Noget gik galt. Prøv igen eller kontakt os for hjælp.",
+          emailUser: process.env.EMAIL_USER},
       { status: 500 }
     );
   }
