@@ -107,8 +107,7 @@ export async function POST(req) {
     await transporter.sendMail(confirmationMailOptions);
 
     return NextResponse.json(
-      { message: "Bestillingen er sendt! Tak for din ordre.",
-        emailUser: process.env.EMAIL_USER },
+      { message: "Bestillingen er sendt! Tak for din ordre." },
       { status: 200 }
     );
   } catch (error) {
